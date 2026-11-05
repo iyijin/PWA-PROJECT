@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,
+initial-scale=1.0">
+
+<title>College Information Portal</title>
+
+<link rel="stylesheet" href="style.css">
+<!--PWA Manifest-->
+<link rel="manifest" href="manifest.json">
+
+<meta name="theme-color" content="#2563eb">
+</head>
+<body>
+    <header>
+        <h1>St.Andrews College</h1>
+        <p>College Information Portal</p>
+    </header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#courses">Courses</a>
+        <a href="#departments">Departments</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <main>
+        <section id="about">
+            <h2>About Our College</h2>
+            <p>
+                St. Andrews College provides quality education
+                and opportunities for students to develop 
+                academic and professional skills.
+            </p>
+        </section>
+        <section id="courses">
+            <h2>Courses Offered</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>B.Sc.IT</h3>
+                    <p>Bachelor of Science in Information and Technology</p>
+                </div>
+                <div class="card">
+                    <h3>B.Com</h3>
+                    <p>Bachelor of Commerce</p>
+                </div>
+            </div>
+        </section>
+        <section id="departments">
+            <h2>Departments</h2>
+            <ul>
+                <li>Information Technology</li>
+                <li>Computer Science</li>
+                <li>Commerce</li>
+                <li>Management Studies</li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: info@college.edu</p>
+            <p>Phone: 022-12345678</p>
+            <p>Address: Mumbai, Maharashtra</p>
+        </section>
+    </main>
+    <footer>
+        <p>2026 College Information Portal</p>
+    </footer>
+    <!--Register Service Worker-->
+    <script>
+        if("serviceWorker" in navigator){
+            window.addEventListener("load",function(){
+                navigator.serviceWorker
+                .register("sw.js")
+                .then(function(){
+                    console.log("Service Worker registered");
+                })
+                .catch(function(error){
+                    console.log("Service Registration Failed",error);
+                });
+            });
+        }
+    </script>
+</body>
+</html>
